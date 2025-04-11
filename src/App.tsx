@@ -15,6 +15,7 @@ function App() {
           style={{ position: "absolute", width: "100%", height: "100%", backgroundColor: "#000" }}
           camera={{ position: [0, 0, 25] }}
         >
+          
           <SceneRouter />
         </Canvas>
         <Routes>

@@ -1,50 +1,97 @@
 import * as THREE from 'three';
 import { useFrame, useThree } from '@react-three/fiber';
-import React, { useMemo, useRef } from 'react';
-import { Physics } from '@react-three/rapier';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
-// Function to create a new star using instancing for performance
-function Star() {
-    const meshRef = useRef<any>(null);
-    const count = 3000; // Number of stars
+type PyramidProps = {
+    id: number
+    position: [number, number, number]
+    velocity: [number, number, number]
+    lifespan: number
+    onExpire: (id: number) => void
+}
 
-    // Create geometries and materials outside the render loop to avoid recalculation
-    const geometry = useMemo(() => new THREE.IcosahedronGeometry(0.1, 2), []);
-    const material = useMemo(
-        () => new THREE.MeshStandardMaterial({ color: '#ffa0e0', emissive: '#ffa0e0', emissiveIntensity: 5 }),
-        []
-    );
+function Pyramid({ id, position, velocity, lifespan, onExpire }: PyramidProps) {
+    const ref = useRef<THREE.Mesh>(null);
+    const [life, setLife] = useState(0);
+    const initialY = useRef(position[1]);
+    const bounceSpeed = useRef(Math.random() * 2 + 1);
 
-    // Instanced mesh
-    const positions = useMemo(() => {
-        let positions = [];
-        for (let i = 0; i < count; i++) {
-            positions.push([
-                (Math.random() - 0.5) * 300,
-                (Math.random() - 0.5) * 300,
-                (Math.random() - 0.5) * 300,
-            ]);
-        }
-        return positions;
-    }, [count]);
+    useFrame((_, delta) => {
+        setLife((prevLife) => {
+            const newLife = prevLife + delta;
+            const progress = Math.min(1, newLife / lifespan); // 0 → 1
 
-    useFrame(() => {
-        if (meshRef.current) {
-            // Set positions for each instance at runtime
-            positions.forEach((pos, index) => {
-                meshRef.current.setMatrixAt(
-                    index,
-                    new THREE.Matrix4().setPosition(pos[0], pos[1], pos[2])
-                );
-            });
-            meshRef.current.instanceMatrix.needsUpdate = true; // Tell the instance mesh to update its matrix
-        }
+            if (ref.current) {
+                const mesh = ref.current;
+
+                // Bounce
+                mesh.position.y = initialY.current + Math.sin(performance.now() * 0.002 * bounceSpeed.current) * 0.2;
+
+                // Movement
+                mesh.position.x += velocity[0] * delta * 2;
+                mesh.position.y += velocity[1] * delta;
+                mesh.position.z += velocity[2] * delta;
+
+                // Rotation
+                mesh.rotation.y += delta * 2;
+                mesh.rotation.x += delta * 2;
+
+                // Growth/shrink logic
+                let scale = 1;
+                let opacity = 0.3;
+
+                if (progress < 0.2) {
+                    const t = progress / 0.2; // 0 → 1
+                    scale = t;
+                    opacity = t * 0.3;
+                } else if (progress > 0.8) {
+                    const t = (1 - progress) / 0.2; // 1 → 0
+                    scale = t;
+                    opacity = t * 0.3;
+                }
+
+                mesh.scale.setScalar(scale);
+                const mat = mesh.material as THREE.MeshPhysicalMaterial;
+                mat.opacity = opacity;
+            }
+
+            if (newLife >= lifespan) {
+                onExpire(id);
+            }
+
+            return newLife;
+        });
     });
 
-    return <instancedMesh ref={meshRef} args={[geometry, material, count]} />;
+
+    return (
+        <mesh ref={ref} position={position}>
+            <coneGeometry args={[1.8, 1.8, 3]} />
+            <meshStandardMaterial
+                color="#005745"
+                emissive="#08a36b"
+                emissiveIntensity={1}
+                transparent
+                opacity={0.1}
+                roughness={0.2}
+                metalness={0.8}
+                side={THREE.DoubleSide}
+            />
+            <lineSegments>
+                <edgesGeometry attach="geometry" args={[new THREE.ConeGeometry(1.8, 1.8, 3)]} />
+                <lineBasicMaterial color="#00ff00" linewidth={1} />
+            </lineSegments>
+        </mesh>
+    )
 }
 
 function AboutScene() {
+    const [pyramids, setPyramids] = useState<Array<Omit<PyramidProps, 'onExpire'>>>([])
+
+    const handleExpire = (id: number) => {
+        // Move this logic outside render to avoid state updates in the middle of render
+        // setPyramids((prev) => prev.filter((p) => p.id !== id));
+    };
     const shader = useMemo(() => ({
         uniforms: {
             time: { value: 0.0 },
@@ -66,7 +113,7 @@ function AboutScene() {
                 vec3 colorBottom = vec3(0.0, 0.27, 0.25); // #00453f
           
                 // Animate the gradient by using time to offset the blend
-                float speedFactor = 0.05;  // A value < 1 will slow down the animation
+                float speedFactor = 0.1;  // A value < 1 will slow down the animation
                 float animatedFactor = 0.5 + 0.5 * sin(time * speedFactor + vUv.y * 5.0);
 
           
@@ -76,30 +123,59 @@ function AboutScene() {
                 blendedColor = mix(blendedColor, colorTop, animatedFactor);
           
                 gl_FragColor = vec4(blendedColor, 1.0);
+
+                
               }
             `,
     }), []);
 
+    // Add a new pyramid every second
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setPyramids((prev) => [
+                ...prev,
+                {
+                    id: Math.random(),
+                    position: [
+                        (Math.random() - 0.5) * 60,
+                        (Math.random() - 0.5) * 60,
+                        (Math.random() - 0.5) * 1,
+                    ],
+                    velocity: [
+                        (Math.random() - 0.5) * 1,
+                        (Math.random() - 0.5) * 1,
+                        (Math.random() - 0.5) * 1,
+                    ],
+                    lifespan: 5 + Math.random() * 3,
+                },
+            ])
+        }, 1000)
+        return () => clearInterval(interval)
+    }, [])
 
-    // useFrame((state, delta) => {
-    //     // Slow rotation for the group
-    //     ref.current.rotation.x -= delta / 10;
-    //     ref.current.rotation.y -= delta / 15;
-    // });
     const { viewport } = useThree(); // Get viewport size
     useFrame(({ clock }) => {
         shader.uniforms.time.value = clock.elapsedTime;
-      });
+    });
     return (
-        // <Physics timeStep="vary" gravity={[0, 0, 0]}>
-        <mesh position={[0, 0, -1]} scale={[viewport.width, viewport.height, 1]} >
-            <planeGeometry args={[1.5, 1.5]} />
+        <>
+            {/* Background gradient shader */}
+            <mesh position={[0, 0, -10]} scale={[viewport.width, viewport.height, 1]}>
+                <planeGeometry args={[1.5, 1.5]} />
+                <shaderMaterial args={[shader]} />
+            </mesh>
+            {/* Lights */}
+            <ambientLight intensity={1} />
+            <pointLight position={[10, 10, 10]} intensity={3} />
 
-            <shaderMaterial args={[shader]} />
-        </mesh >
+            {/* Glowing bouncing pyramids */}
+            {pyramids.map((pyramid) => (
+                <Pyramid key={pyramid.id} {...pyramid} onExpire={handleExpire} />
+            ))}
+            {/* <MyModel/> */}
+        </>
+    )
 
-        // </Physics>
-    );
 }
 
 export default AboutScene;
