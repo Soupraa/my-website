@@ -1,7 +1,6 @@
 import * as THREE from 'three';
 import { useFrame, useThree } from '@react-three/fiber';
 import { useEffect, useMemo, useRef, useState } from 'react';
-
 type PyramidProps = {
     id: number
     position: [number, number, number]
@@ -90,7 +89,7 @@ function AboutScene() {
 
     const handleExpire = (id: number) => {
         // Move this logic outside render to avoid state updates in the middle of render
-        // setPyramids((prev) => prev.filter((p) => p.id !== id));
+        setPyramids((prev) => prev.filter((p) => p.id !== id));
     };
     const shader = useMemo(() => ({
         uniforms: {
@@ -172,7 +171,7 @@ function AboutScene() {
             {pyramids.map((pyramid) => (
                 <Pyramid key={pyramid.id} {...pyramid} onExpire={handleExpire} />
             ))}
-            {/* <MyModel/> */}
+            {/* <Skull /> */}
         </>
     )
 

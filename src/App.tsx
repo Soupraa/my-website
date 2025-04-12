@@ -6,16 +6,17 @@ import HomePage from './pages/HomePage';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Scene from './components/Scenes/HomeScene';
 import SceneRouter from './components/SceneRouter/SceneRouter';
+import NavBar from './components/NavBar/NavBar';
 function App() {
   return (
     <Container>
       <Router>
+        <NavBar/>
         <Canvas
           gl={{ preserveDrawingBuffer: true }}
-          style={{ position: "absolute", width: "100%", height: "100%", backgroundColor: "#000" }}
+          style={{ position: "fixed", width: "100%", height: "100%", backgroundColor: "#000" }}
           camera={{ position: [0, 0, 25] }}
-        >
-          
+        >  
           <SceneRouter />
         </Canvas>
         <Routes>

@@ -55,7 +55,7 @@ function HomeScene() {
 
   return (
     <Physics timeStep="vary" gravity={[0, 0, 0]}>
-      <color attach="background" args={['#12071f']} />
+      <color attach="background" args={['#010105']} />
       <group ref={ref}>
         <Star />
       </group>

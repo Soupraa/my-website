@@ -6,7 +6,6 @@ export const Title = styled.h1`
     font-style: normal;
     font-size: clamp(2rem, 10vw, 10rem);
     color: white;
-    letterspacing: 0.5rem;
     line-height: 0;
     z-index: 1; // Ensure title is above canvas
 `;
