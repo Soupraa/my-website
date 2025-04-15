@@ -3,14 +3,14 @@ import styled, { keyframes } from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
   overflow-x: hidden;
   overflow-y: auto;
   position: relative;
   z-index: 1;
-  height: 100vh;
-
+  justify-content: center;   // centers ContentArea horizontally
+  align-items: center; 
+  
   /* Scrollbar styles */
   &::-webkit-scrollbar {
     width: 10px;

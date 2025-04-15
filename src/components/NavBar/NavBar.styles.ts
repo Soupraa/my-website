@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const NavBarContainer = styled.div`
     width: 100%;
-    background: rgba(255, 255, 255, 0.05);
     position: fixed;
     z-index: 2;
     display: flex;
@@ -17,6 +16,9 @@ export const FlexStart = styled.div`
     width: 50%;
     display: inline-flex
 ;
+`;
+export const FlexMiddle = styled.div`
+    display: flex;
 `;
 
 export const FlexEnd = styled.div`
