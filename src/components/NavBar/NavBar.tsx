@@ -1,20 +1,20 @@
 import React from "react";
-import { FlexEnd, FlexMiddle, FlexStart, NavBarContainer } from "./NavBar.styles";
-import { NavButton } from "../common/styles";
+import {NavBarContainer } from "./NavBar.styles";
+import { FlexEnd, FlexStart, NavButton } from "../common/styles";
 
 const NavBar: React.FC = () => {
     return (
         <NavBarContainer>
             <FlexStart>
-                asdasda
+                LOCAL/
             </FlexStart>
-            <NavButton>
-                HOME
-            </NavButton>
-            <NavButton>
+            
+          
+            <FlexEnd>
+                  <NavButton>
                 ABOUT
             </NavButton>
-            <FlexEnd />
+            </FlexEnd>
 
         </NavBarContainer>
     )

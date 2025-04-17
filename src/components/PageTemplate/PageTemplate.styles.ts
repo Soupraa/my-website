@@ -10,7 +10,6 @@ export const Container = styled.div`
   z-index: 1;
   justify-content: center;   // centers ContentArea horizontally
   align-items: center; 
-  
   /* Scrollbar styles */
   &::-webkit-scrollbar {
     width: 10px;
@@ -48,7 +47,7 @@ export const BlackOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100vh;
-    overflow-x: hidden;
+  overflow-x: hidden;
   overflow-y: auto;
   background-color: black;
   z-index: 99; 

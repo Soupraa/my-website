@@ -9,15 +9,7 @@ import NavBar from './components/NavBar/NavBar';
 function App() {
   return (
     <Container>
-      <Router>
-        {/* <NavBar/> */}
-        <Canvas
-          gl={{ preserveDrawingBuffer: true }}
-          style={{ position: "fixed", width: "100%", height: "100%", backgroundColor: "#000" }}
-          camera={{ position: [0, 0, 25] }}
-        >  
-          <SceneRouter />
-        </Canvas>
+      <Router>     
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />

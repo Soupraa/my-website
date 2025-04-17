@@ -9,7 +9,8 @@ const AboutSection: React.FC = () => {
                 About
             </H1>
             <Paragraph>
-                asdasdasdasd
+                I'm a developer passionate about building accessible, user-focused web applications through thoughtful and innovative engineering.
+                I love crafting delightful digital experiences and am always eager to take on new challenges.
             </Paragraph>
         </>
     )

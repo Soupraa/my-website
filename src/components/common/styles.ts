@@ -7,7 +7,7 @@ export const Container = styled.div`
 
 export const ContentArea = styled.div`
     margin: auto;
-    max-width: 1080px;   
+    max-width: 1480px;   
     text-align: center;
     padding-inline: 3rem;
 `;
@@ -21,11 +21,11 @@ export const NavButton = styled.button`
     font-family: 'Orbitron';
     font-weight: 700;
     margin-right: 10px;
-    border-radius: 1rem 0px;
 `;
 export const Paragraph = styled.p`
     color: #dddddd;
     line-height: 1.5rem;
+    
 `;
 
 export const VerticalLine = styled.div`
@@ -41,6 +41,7 @@ export const H2 = styled.h2`
     color: white;
     font-weight: 400;
     margin-block: 0.5rem;
+    text-align: left;
 `;
 
 export const TechTag = styled.div`
@@ -51,10 +52,25 @@ export const TechTag = styled.div`
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
     font-size: 0.8rem;
+`; 
+export const FlexStart = styled.div`
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+    display: inline-flex;
+    font-family: "Nova Square", sans-serif;
+;
 `;
-// type SpaceSize = 'xs' | 'sm' | 'md' | 'lg' | string;
+export const FlexMiddle = styled.div`
+    display: flex;
+`;
 
-// export const Spacer = styled.div<{ space: SpaceSize }>(
-//     ({ space }) => `
-//     margin-bottom: ${space};
-// `);
+export const FlexEnd = styled.div`
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+    display: inline-flex;
+        font-family: "Nova Square", sans-serif;
+
+;
+`;

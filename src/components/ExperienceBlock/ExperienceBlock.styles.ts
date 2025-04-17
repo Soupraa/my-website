@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const ExperienceContainer = styled.a`
-    background: #121212;
     padding: 2rem;
     color: white;
     border-radius: 3px;
