@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ExperienceContainer = styled.a`
-    background: #121212;
+    // background: #121212;
     padding: 2rem;
     color: white;
     border-radius: 3px;
@@ -32,14 +32,4 @@ export const RightSide = styled.div`
     width: 100%;
 `;
 
-export const TextBlock = styled.div`
-    color: #dddddd;
-    line-height: 1.5rem;
-    font-size: 0.9rem;
-    margin-block: 1rem;
-`;
-export const TextTitle = styled.h2`
-    font-size: 1.1rem;
-    margin: 0;
-`;
 

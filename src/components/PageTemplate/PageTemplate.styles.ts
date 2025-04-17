@@ -6,7 +6,7 @@ export const Container = styled.div`
   width: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  position: relative;
+  position: fixed;
   z-index: 1;
   justify-content: center;   // centers ContentArea horizontally
   align-items: center; 

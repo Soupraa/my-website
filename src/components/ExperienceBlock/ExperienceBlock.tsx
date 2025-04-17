@@ -1,7 +1,8 @@
 import React from "react";
-import { ExperienceContainer, LeftSide, RightSide, TextBlock, TextTitle } from "./ExperienceBlock.styles";
+import { ExperienceContainer, LeftSide, RightSide } from "./ExperienceBlock.styles";
 import { TechTag } from "../common/styles";
-import { Experience } from "../../pages/sections/ExperienceSection";
+import { Experience } from "../../sections/ExperienceSection";
+import { TextBlock, TextTitle } from "../../sections/Sections.styles";
 
 const ExperienceBlock: React.FC<{ data: Experience }> = ({ data }) => {
     return (

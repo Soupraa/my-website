@@ -7,9 +7,10 @@ export const Container = styled.div`
 
 export const ContentArea = styled.div`
     margin: auto;
-    max-width: 1080px;   
+    max-width: 1280px;   
     text-align: center;
     padding-inline: 3rem;
+    display: flex;
 `;
 export const NavButton = styled.button`
     background: none;
@@ -22,6 +23,7 @@ export const NavButton = styled.button`
     font-weight: 700;
     margin-right: 10px;
     border-radius: 1rem 0px;
+    width: fit-content;
 `;
 export const Paragraph = styled.p`
     color: #dddddd;
@@ -52,9 +54,3 @@ export const TechTag = styled.div`
     margin-bottom: 0.5rem;
     font-size: 0.8rem;
 `;
-// type SpaceSize = 'xs' | 'sm' | 'md' | 'lg' | string;
-
-// export const Spacer = styled.div<{ space: SpaceSize }>(
-//     ({ space }) => `
-//     margin-bottom: ${space};
-// `);

@@ -1,6 +1,6 @@
 import React from "react";
-import { H1 } from "../../components/common/styles";
-import ExperienceBlock from "../../components/ExperienceBlock/ExperienceBlock";
+import { H1 } from "../components/common/styles";
+import ExperienceBlock from "../components/ExperienceBlock/ExperienceBlock";
 
 
 export type Experience = {
