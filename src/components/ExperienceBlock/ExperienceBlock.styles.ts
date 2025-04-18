@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { SCREEN_SIZE } from "../common/constants";
 
 export const ExperienceContainer = styled.a`
     padding: 2rem;
@@ -12,7 +13,7 @@ export const ExperienceContainer = styled.a`
     margin-block: 1rem;
     min-height: 160px;
 
-    @media (max-width: 678px){
+    @media (max-width: ${SCREEN_SIZE.MEDIUM}){
         flex-direction: column;
     }
 `;
@@ -22,7 +23,7 @@ export const LeftSide = styled.div`
     color: #dddddd;
     font-size: 0.9rem;
     margin-bottom: 0.8rem;
-    @media (max-width: 678px){
+    @media (max-width: ${SCREEN_SIZE.MEDIUM}){
         width: 100%;
 
     }

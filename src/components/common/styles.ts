@@ -1,11 +1,13 @@
-import styled from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { TYPOGRAPHY } from "./constants";
 
 export const Container = styled.div`
     width: 100%;
     height:100vh;
 `;
-
+export const Spacer = styled.div<{ $space?: string }>`
+  margin-bottom: ${({ $space }) => $space || "0rem"};
+`;
 export const ContentArea = styled.div`
     margin: auto;
     text-align: center;
@@ -24,7 +26,7 @@ export const NavButton = styled.button`
 `;
 export const Paragraph = styled.p`
     color: #a7a5a5;
-    line-height: 1.5rem;
+    line-height: 1.8rem;
     // text-transform: uppercase;
 `;
 
@@ -87,6 +89,23 @@ export const BigH2 = styled.h2`
     font-family: ${TYPOGRAPHY.TITLE};
     font-weight: 800;
     font-style: normal;
-    font-size: clamp(2rem, 10vw, 7rem);
-    text-transform: uppcase;
+    font-size: clamp(3rem, 10vw, 7vw);
+    margin: auto;
+`;
+
+export const ParagraphBold = styled.a`
+  display: inline-block;
+  font-weight: bold;
+  color: white; /* Default text color */
+  background-color: #0099ff; /* Initial gradient */
+  background-size: 200% 100%; /* Double the width to allow sliding */
+  background-position: left bottom; /* Start with the gradient hidden */
+  -webkit-background-clip: text; /* For Safari */
+  background-clip: text;
+  transition: background-position 0.6s ease; /* Smooth transition on hover */
+
+  &:hover {
+    background-position: right bottom; /* Slide gradient to the right on hover */
+    color: transparent;
+  }
 `;

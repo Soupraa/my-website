@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 const AnimatedSection = styled.section<{ $isVisible: boolean }>`
   opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
-  transform: ${({ $isVisible }) => ($isVisible ? 'translateY(0)' : 'translateY(50px)')};
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: ${({ $isVisible }) => ($isVisible ? 'translateY(0)' : 'translateY(70px)')};
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 `;
 
 
@@ -24,7 +24,7 @@ const ScrollAnimationWrapper: React.FC<ScrollAnimationProps> = ({ children }) =>
         setIsVisible(entry.isIntersecting);
       },
       {
-        threshold: 0.1, // Trigger when 10% is visible
+        threshold: 0.005, // Trigger when 5% is visible
       }
     );
 

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { TYPOGRAPHY } from "../../components/common/constants";
+import { SCREEN_SIZE } from "../../components/common/constants";
 
 export const AboutContainer = styled.div`
     z-index: 1;
@@ -7,13 +7,18 @@ export const AboutContainer = styled.div`
     color: white;
     text-align: left;
     gap: 2rem;
+    @media (max-width: ${SCREEN_SIZE.MEDIUM}){
+        flex-direction: column;
+    }
 `;
 
 export const AboutBlock = styled.div`
     min-height: 200px;
     width: 50%;
-    // padding: 2rem;
     padding-block: 2rem;
+    @media (max-width: ${SCREEN_SIZE.MEDIUM}){
+        width: 100%;
+    }
 `;
 export const TextBlock = styled.div`
     color: #dddddd;
