@@ -1,36 +1,33 @@
 import styled, { keyframes } from "styled-components";
 
 export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
   overflow-x: hidden;
   overflow-y: auto;
   position: relative;
   z-index: 1;
-  justify-content: center;   // centers ContentArea horizontally
+  justify-content: center;  
   align-items: center; 
-  /* Scrollbar styles */
-  &::-webkit-scrollbar {
-    width: 10px;
-  }
+  // /* Scrollbar styles */
+  // &::-webkit-scrollbar {
+  //   width: 10px;
+  // }
 
-  &::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
-  }
+  // &::-webkit-scrollbar-track {
+  //   background: rgba(255, 255, 255, 0.05);
+  // }
 
-  &::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-  }
+  // &::-webkit-scrollbar-thumb {
+  //   background: rgba(255, 255, 255, 0.2);
+  //   border-radius: 10px;
+  // }
 
-  &::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.4);
-  }
+  // &::-webkit-scrollbar-thumb:hover {
+  //   background: rgba(255, 255, 255, 0.4);
+  // }
 
-  /* Firefox */
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.05);
+  // /* Firefox */
+  // scrollbar-width: thin;
+  // scrollbar-color: rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.05);
 `;
 
 const fadeOut = keyframes`

@@ -1,10 +1,9 @@
 import React from "react";
-import {NavBarContainer } from "./NavBar.styles";
-import { FlexEnd, FlexStart, NavButton } from "../common/styles";
+import { FlexEnd, FlexStart, FullWidthContainer, NavButton } from "../common/styles";
 
 const NavBar: React.FC = () => {
     return (
-        <NavBarContainer>
+        <FullWidthContainer>
             <FlexStart>
                 LOCAL/
             </FlexStart>
@@ -16,7 +15,7 @@ const NavBar: React.FC = () => {
             </NavButton>
             </FlexEnd>
 
-        </NavBarContainer>
+        </FullWidthContainer>
     )
 }
 export default NavBar;

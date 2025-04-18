@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { TYPOGRAPHY } from "../components/common/constants";
 const gradientFlow = keyframes`
    0% {
       background-position: 0% 50%;
@@ -11,7 +12,7 @@ const gradientFlow = keyframes`
     }
 `;
 export const Title = styled.h1`
-  font-family: "Orbitron", serif;
+  font-family: ${TYPOGRAPHY.TITLE};
   font-weight: 800;
   font-style: normal;
   font-size: clamp(2rem, 10vw, 10rem);
@@ -29,30 +30,12 @@ export const Title = styled.h1`
   animation: ${gradientFlow} 20s ease infinite;
 `;
 
-export const Button = styled.button`
-  background-color: #ff4060;
-  color: white;
-  font-size: 1rem;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  position: relative; 
-  z-index: 2; 
-  cursor: pointer;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: #e53946;
-  }
-`;
-
 export const HeadingSection = styled.div` 
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;  
   align-items: center;  
-  text-align: center;    
 `;
 
 export const InfoContainer = styled.div`

@@ -15,7 +15,7 @@ const PageTemplate: React.FC<{ children: ReactNode }> = ({ children }) => {
         return () => clearTimeout(timeout); // Cleanup timeout on component unmount
     }, []);
     return (
-        <div style={{scrollbarWidth: "thin"}}>
+        <>
             <Canvas
                 gl={{ preserveDrawingBuffer: true }}
                 style={{ position: "fixed", width: "100%", height: "100%", backgroundColor: "#000" }}
@@ -28,7 +28,7 @@ const PageTemplate: React.FC<{ children: ReactNode }> = ({ children }) => {
                 {children}
 
             </Container>
-        </div>
+        </>
     )
 }
 export default PageTemplate;
