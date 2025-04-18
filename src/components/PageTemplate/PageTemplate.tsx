@@ -1,6 +1,5 @@
 import React, { ReactNode, useEffect, useState } from "react";
 import { BlackOverlay, Container } from "./PageTemplate.styles";
-import NavBar from "../NavBar/NavBar";
 import { Canvas } from "@react-three/fiber";
 import SceneRouter from "../SceneRouter/SceneRouter";
 const PageTemplate: React.FC<{ children: ReactNode }> = ({ children }) => {

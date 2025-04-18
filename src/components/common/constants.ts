@@ -1,5 +1,5 @@
 export const TYPOGRAPHY = {
     TITLE: "Orbitron, serif",
-    NOVA_SQUARE: "Nova Square, sans-serif"
-    
+    NOVA_SQUARE: "Nova Square, sans-serif",
+    SPACE_GROTESK : "Space Grotesk, sans-serif"
 }

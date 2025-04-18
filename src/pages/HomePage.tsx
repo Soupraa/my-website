@@ -6,6 +6,7 @@ import { ContentArea, FlexEnd, FlexStart, FullWidthContainer, Paragraph } from "
 import ExperienceSection from "./sections/ExperienceSection";
 import AboutSection from "./sections/AboutSection";
 import NavBar from "../components/NavBar/NavBar";
+import ScrollAnimationWrapper from "../components/ScrollAnimationWrapper/ScrollAnimationWrapper";
 
 const HomePage: React.FC = () => {
     const navigate = useNavigate(); // Get the navigate function
@@ -38,12 +39,12 @@ const HomePage: React.FC = () => {
                     </FlexEnd>
                 </FullWidthContainer>
             </HomePageContentArea>
+            <ScrollAnimationWrapper>
             <InfoContainer>
-                <ContentArea>
-                    <AboutSection />
-                    <ExperienceSection />
-                </ContentArea>
+                <AboutSection />
+                <ExperienceSection />
             </InfoContainer>
+            </ScrollAnimationWrapper>
         </PageTemplate>
     );
 };

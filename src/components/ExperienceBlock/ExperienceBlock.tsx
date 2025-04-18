@@ -12,9 +12,9 @@ const ExperienceBlock: React.FC<{ data: Experience }> = ({ data }) => {
                 <TextBlock>
                    {data.description}
                 </TextBlock>
-                {data.tags.map((s: string) => {
+                {data.tags.map((s: string, i:number) => {
                     return (
-                        <TechTag>{s}</TechTag>
+                        <TechTag key={i}>{s}</TechTag>
                     )
                 })}
             </RightSide>

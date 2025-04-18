@@ -1,5 +1,5 @@
 import React from "react";
-import { H1 } from "../../components/common/styles";
+import { H1, TitleWidthContainer } from "../../components/common/styles";
 import ExperienceBlock from "../../components/ExperienceBlock/ExperienceBlock";
 
 
@@ -29,12 +29,14 @@ const ExperienceData = [
 const ExperienceSection: React.FC = () => {
     return (
         <>
-            <H1>
-                Experience
-            </H1>
-            {ExperienceData.map((d: Experience) => {
+            <TitleWidthContainer>
+                <H1>
+                    EXPERIENCE
+                </H1>
+            </TitleWidthContainer>
+            {ExperienceData.map((d: Experience, i: number) => {
                 return (
-                    <ExperienceBlock data={d} />
+                    <ExperienceBlock key={i} data={d} />
                 )
             })}
         </>

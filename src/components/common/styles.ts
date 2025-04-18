@@ -8,9 +8,9 @@ export const Container = styled.div`
 
 export const ContentArea = styled.div`
     margin: auto;
-    max-width: 1480px;   
     text-align: center;
-    padding-inline: 3rem;
+    padding-inline: 2rem;
+    color: white;
 `;
 export const NavButton = styled.button`
     background: none;
@@ -23,27 +23,21 @@ export const NavButton = styled.button`
     margin-right: 10px;
 `;
 export const Paragraph = styled.p`
-    color: #dddddd;
+    color: #a7a5a5;
     line-height: 1.5rem;
-    
+    // text-transform: uppercase;
 `;
 
-export const VerticalLine = styled.div`
-    width: 1px;
-    height: 100px;
-    background: linear-gradient(to bottom, #ffffff55, #dddddd);
-`;
 export const H1 = styled.h1`
     font-family: ${TYPOGRAPHY.TITLE};
     color: white;
+    text-transform: uppercase;
+    
 `;
 export const H2 = styled.h2`
-    color: white;
-    font-weight: 400;
-    margin-block: 0.5rem;
-    text-align: left;
+  font-family: ${TYPOGRAPHY.SPACE_GROTESK};
+  text-transform: uppercase;
 `;
-
 export const TechTag = styled.div`
     display:inline-block;
     background: #3530c9;
@@ -81,4 +75,18 @@ export const FullWidthContainer = styled.div`
     box-sizing: border-box;
     color: white;
     font-family: ${TYPOGRAPHY.NOVA_SQUARE}
+`;
+
+export const TitleWidthContainer = styled.div`
+    width: 100vw;
+    border-block: white 1px solid;
+    text-align: center;
+`;
+
+export const BigH2 = styled.h2`
+    font-family: ${TYPOGRAPHY.TITLE};
+    font-weight: 800;
+    font-style: normal;
+    font-size: clamp(2rem, 10vw, 7rem);
+    text-transform: uppcase;
 `;

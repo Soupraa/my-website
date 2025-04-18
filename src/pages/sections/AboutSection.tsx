@@ -1,17 +1,37 @@
 import React from "react";
-import { H1, Paragraph } from "../../components/common/styles";
-import ExperienceBlock from "../../components/ExperienceBlock/ExperienceBlock";
+import { BigH2, ContentArea, FlexEnd, FlexStart, H1, H2, Paragraph, TitleWidthContainer } from "../../components/common/styles";
+import { Title } from "../HomePage.styles";
+import { AboutBlock, AboutContainer } from "./Section.styles";
+import SkillsBlock from "../../components/SkillsBlock/SkillsBlock";
 
 const AboutSection: React.FC = () => {
     return (
         <>
-            <H1>
-                About
-            </H1>
-            <Paragraph>
-                I'm a developer passionate about building accessible, user-focused web applications through thoughtful and innovative engineering.
-                I love crafting delightful digital experiences and am always eager to take on new challenges.
-            </Paragraph>
+            <TitleWidthContainer>
+                <H1>
+                    about
+                </H1>
+            </TitleWidthContainer>
+            <ContentArea>
+                <AboutContainer>
+                    <AboutBlock>
+                        <BigH2>
+                            I AM A FRONT-END ENGINEER
+                        </BigH2>
+                    </AboutBlock>
+                    <AboutBlock>
+                        <H2>background</H2>
+                        <Paragraph>
+                            I graduated from RMIT University after completing Bachelor of Software Engineering.
+                            <br />
+                            <br />
+                            As a front-end engineer, I enjoy bridging the gap between engineering and design, combining my technical knowledge and my keen eye for design to create stunning pixel-perfect products.
+                        </Paragraph>
+                        <H2>skills</H2>
+                        <SkillsBlock />
+                    </AboutBlock>
+                </AboutContainer>
+            </ContentArea>
         </>
     )
 }
