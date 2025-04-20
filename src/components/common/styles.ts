@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { TYPOGRAPHY } from "./constants";
 
 export const Container = styled.div`
@@ -93,19 +93,57 @@ export const BigH2 = styled.h2`
     margin: auto;
 `;
 
-export const ParagraphBold = styled.a`
-  display: inline-block;
-  font-weight: bold;
-  color: white; /* Default text color */
-  background-color: #0099ff; /* Initial gradient */
-  background-size: 200% 100%; /* Double the width to allow sliding */
-  background-position: left bottom; /* Start with the gradient hidden */
-  -webkit-background-clip: text; /* For Safari */
-  background-clip: text;
-  transition: background-position 0.6s ease; /* Smooth transition on hover */
+export const ParagraphLink = styled.a`
+    position: relative;
+    display: inline-block;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(to right, #0099ff 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background-position 0.5s ease;
 
-  &:hover {
-    background-position: right bottom; /* Slide gradient to the right on hover */
-    color: transparent;
+    &:hover {
+        background-position: 0 0;
+    }
+`;
+export const ParagraphBold = styled.b`
+    font-weight: 600;
+    color: white;
+`;
+
+
+const driftStatic = keyframes`
+  0% {
+    transform: translateY(10%) translateX(10%);
+  }
+  100% {
+    transform: translateY(-10%) translateX(-10%);
   }
 `;
+
+export const StaticOverlayWrapper = styled.div`
+  position: relative;
+  overflow: hidden;
+`;
+
+export const StaticEffectLayer = styled.div`
+  position: absolute;
+  inset: -200%;
+  background-image: url("https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png");
+  background-repeat: repeat;
+  opacity: 0.09;
+  will-change: transform;
+  animation: ${driftStatic} 0.2s linear infinite both;
+  pointer-events: none;
+  z-index: 2;
+`;
+export const ParallaxLayer = styled.div`
+   position: relative;
+  width: 100%;
+  padding-top: 50%;
+  overflow: hidden;
+`;
+

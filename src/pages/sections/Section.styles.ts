@@ -6,9 +6,10 @@ export const AboutContainer = styled.div`
     display:flex;
     color: white;
     text-align: left;
-    gap: 2rem;
+    gap: 5rem;
     @media (max-width: ${SCREEN_SIZE.MEDIUM}){
         flex-direction: column;
+        gap: 2rem;
     }
 `;
 
@@ -30,4 +31,10 @@ export const TextBlock = styled.div`
 export const TextTitle = styled.h2`
     font-size: 1.1rem;
     margin: 0;
+`;
+export const InnerBlock = styled.div`
+    width: 80%;
+    @media (max-width: ${SCREEN_SIZE.MEDIUM}){
+        width: 100%;
+    }
 `;

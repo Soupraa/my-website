@@ -43,10 +43,6 @@ export const InfoContainer = styled.div`
   width: 100%;
 `;
 
-export const HeadingText = styled.div`
-  width: 60%;
-`;
-
 export const HomePageContentArea = styled.div`  
     margin: auto;
     max-width: 100vw;   

@@ -14,6 +14,7 @@ type ScrollAnimationProps = {
   children: React.ReactNode;
 };
 
+//fade in effect on scroll
 const ScrollAnimationWrapper: React.FC<ScrollAnimationProps> = ({ children }) => {
   const ref = useRef<HTMLElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);

@@ -8,6 +8,9 @@ import { ReactComponent as NextJsIcon } from '../../svgs/nextjs_icon.svg';
 import { ReactComponent as TailwindIcon } from '../../svgs/tailwind_icon.svg';
 import { ReactComponent as NodeJsIcon } from '../../svgs/nodejs_icon.svg';
 import { ReactComponent as GraphqlIcon } from '../../svgs/graphql_icon.svg';
+import { ReactComponent as CssIcon } from '../../svgs/css_icon.svg';
+
+import { Spacer } from "../common/styles";
 
 type Skill = {
     icon: ReactElement;
@@ -15,38 +18,42 @@ type Skill = {
 }
 const SkillsList: Skill[] = [
     {
-        icon: <ReactIcon width={30} height={30} />,
+        icon: <ReactIcon width={45} height={45} />,
         name: "React"
     },
     {
-        icon: <JavaScriptIcon width={30} height={30} />,
+        icon: <JavaScriptIcon width={45} height={45} />,
         name: "Javascript"
     },
     {
-        icon: <TypeScriptIcon width={30} height={30} />,
+        icon: <TypeScriptIcon width={45} height={45} />,
         name: "Typescript"
     },
     {
-        icon: <HtmlIcon width={30} height={30} />,
+        icon: <HtmlIcon width={45} height={45} />,
         name: "HTML5"
-    }
+    },
+    {
+        icon: <CssIcon width={45} height={45} />,
+        name: "CSS"
+    },
 ]
 
 const SkillsListTwo: Skill[] = [
     {
-        icon: <NextJsIcon width={30} height={30} />,
+        icon: <NextJsIcon width={45} height={45} />,
         name: "Next.JS"
     },
     {
-        icon: <TailwindIcon width={30} height={30} />,
+        icon: <TailwindIcon width={45} height={45} />,
         name: "Tailwind.css"
     },
     {
-        icon: <NodeJsIcon width={30} height={30} />,
+        icon: <NodeJsIcon width={45} height={45} />,
         name: "Node.JS"
     },
     {
-        icon: <GraphqlIcon width={30} height={30} />,
+        icon: <GraphqlIcon width={45} height={45} />,
         name: "Graphql"
     },
 ]
@@ -67,6 +74,7 @@ const SkillsBlock: React.FC = () => {
                     })}
                 </LogosRow>
             </LogosAnimationWrapper>
+            <Spacer $space="4rem"/>
             <LogosAnimationWrapper>
                 <LogosRow direction="left">
                     {[...SkillsListTwo, ...SkillsListTwo].map((s: Skill, i: number) => {

@@ -5,14 +5,17 @@ import HomePage from './pages/HomePage';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import SceneRouter from './components/SceneRouter/SceneRouter';
 import NavBar from './components/NavBar/NavBar';
+import { ParallaxProvider } from 'react-scroll-parallax';
 function App() {
   return (
-    <Container>
+   
+
+    <Container> <ParallaxProvider>
       <Router>     
         <Routes>
           <Route path="/" element={<HomePage />} />
         </Routes>
-      </Router>
+      </Router></ParallaxProvider>
     </Container>
   );
 }
