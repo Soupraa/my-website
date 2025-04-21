@@ -1,5 +1,5 @@
 import React from "react";
-import { FlexEnd, FlexStart, FullWidthContainer, NavButton } from "../common/styles";
+import { FlexEnd, FlexStart, FullWidthContainer } from "../common/styles";
 
 const NavBar: React.FC = () => {
     return (
@@ -10,9 +10,7 @@ const NavBar: React.FC = () => {
             
           
             <FlexEnd>
-                  <NavButton>
-                ABOUT
-            </NavButton>
+ 
             </FlexEnd>
 
         </FullWidthContainer>

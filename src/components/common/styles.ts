@@ -14,15 +14,36 @@ export const ContentArea = styled.div`
     padding-inline: 2rem;
     color: white;
 `;
-export const NavButton = styled.button`
-    background: none;
-    color: white;
+export const ButtonsContainer = styled.div`
+   gap: 3rem;
+   display: flex;
+`;
+export const CommonButton = styled.button`  
     text-decoration: none;
-    border: white solid 2px;
-    padding: 0.8em 1rem;
-    cursor: pointer;
+    font-family: ${TYPOGRAPHY.SPACE_GROTESK};
+    font-size: 1.1rem;
+    letter-spacing: 0.1rem;
     font-weight: 700;
-    margin-right: 10px;
+    border: none;
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    width: fit-content;
+    background: linear-gradient(to right, #0099ff 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: background-position 0.5s ease;
+    clip-path: polygon(
+    0 0,
+    calc(100% - 15px) 0,
+    100% 15px,
+    100% 100%,
+    15px 100%,
+    0 calc(100% - 15px)
+    );
+    &:hover {
+        background-position: 0 0;
+    }
+
 `;
 export const Paragraph = styled.p`
     color: #a7a5a5;

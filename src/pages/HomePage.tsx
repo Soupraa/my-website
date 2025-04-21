@@ -41,6 +41,7 @@ const HomePage: React.FC = () => {
                                     image: test, speed: -50, translateY: [0, 15],
                                     scale: [1.5, 1, 'easeOutCubic'],
                                     shouldAlwaysCompleteAnimation: true,
+                                    opacity: [1, 0,'easeInCubic']
                                 }]}
                                 className="aspect-[2/1]"
                             /></ParallaxLayer>

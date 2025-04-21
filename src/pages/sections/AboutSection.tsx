@@ -1,5 +1,5 @@
 import React from "react";
-import { BigH2, ContentArea, H1, H2, Paragraph, ParagraphBold, ParagraphLink, Spacer, TitleWidthContainer } from "../../components/common/styles";
+import { BigH2, ButtonsContainer, CommonButton, ContentArea, H1, H2, Paragraph, ParagraphBold, ParagraphLink, Spacer, TitleWidthContainer } from "../../components/common/styles";
 import { AboutBlock, AboutContainer, InnerBlock } from "./Section.styles";
 import SkillsBlock from "../../components/SkillsBlock/SkillsBlock";
 import ScrollAnimationWrapper from "../../components/ScrollAnimationWrapper/ScrollAnimationWrapper";
@@ -39,6 +39,20 @@ const AboutSection: React.FC = () => {
                                 <Spacer $space="3rem" />
                                 <H2>skills</H2>
                                 <SkillsBlock />
+                                <Spacer $space="4rem" />
+
+                                <ButtonsContainer>
+                                    <CommonButton
+                                        onClick={() => window.open('/richard_gao_resume.pdf', '_blank', 'noopener,noreferrer')}
+                                    >
+                                        VIEW RESUME *
+                                    </CommonButton>
+                                    <CommonButton
+                                        onClick={() => window.open('https://www.linkedin.com/in/richard-gao-417404208/', '_blank', 'noopener,noreferrer')}
+                                    >
+                                        LINKEDIN * 
+                                    </CommonButton>
+                                </ButtonsContainer>
                             </InnerBlock>
                             <Spacer $space="1rem" />
                         </ScrollAnimationWrapper>

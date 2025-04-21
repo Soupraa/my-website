@@ -74,7 +74,7 @@ const SkillsBlock: React.FC = () => {
                     })}
                 </LogosRow>
             </LogosAnimationWrapper>
-            <Spacer $space="4rem"/>
+            <Spacer $space="2rem"/>
             <LogosAnimationWrapper>
                 <LogosRow direction="left">
                     {[...SkillsListTwo, ...SkillsListTwo].map((s: Skill, i: number) => {
