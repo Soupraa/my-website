@@ -1,0 +1,47 @@
+import React, { useState } from "react";
+import { H1, TitleWidthContainer } from "../../components/common/styles";
+import ExperienceBlock from "../../components/ExperiencePanel/ExperiencePanel";
+import ExperiencePanel from "../../components/ExperiencePanel/ExperiencePanel";
+
+
+export type Experience = {
+    time: string;
+    title: string;
+    description: string;
+    tags: string[];
+    link?: string;
+}
+const ExperienceData = [
+    {
+        time: "2021 - PRESENT",
+        title: "Associate Engineer - NAB",
+        description: "Build and maintain full stack web applications for new innovative projects. Work closely with cross-functional teams, including designers, developers and product managers to ensure quality web design and user-centric accessible web apps.",
+        tags: ["JavaScript", "TypeScript", "React", "GraphQL", "Node.JS"],
+        link: "https://www.nab.com.au"
+    },
+    {
+        time: "2019 - 2021",
+        title: "Web developer - FREELANCE",
+        description: "Worked on Shopify and Wordpress websites uplifting outdated designs to a more modern intuitive design.",
+        tags: ["JavaScript", "React", "Shopify", "WordPress"],
+        link: "https://www.nab.com.au"
+    }
+]
+const ExperienceSection: React.FC = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    return (
+        <>
+            <TitleWidthContainer>
+                <H1>
+                    EXPERIENCE
+                </H1>
+            </TitleWidthContainer>
+            {ExperienceData.map((d: Experience, i: number) => {
+                return (
+                  <ExperiencePanel data={d}/>
+                )
+            })}
+        </>
+    )
+}
+export default ExperienceSection;
