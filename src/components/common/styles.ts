@@ -119,6 +119,7 @@ export const ParagraphLink = styled.a`
     display: inline-block;
     font-weight: 700;
     color: white;
+    text-decoration: none;
     background: linear-gradient(to right, #0099ff 50%, white 50%);
     background-size: 200% 100%;
     background-position: 100% 0;

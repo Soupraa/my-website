@@ -39,19 +39,17 @@ const HomePage: React.FC = () => {
                                 style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}
                                 layers={[{
                                     image: test, speed: -50, translateY: [0, 15],
-                                    scale: [1.5, 1, 'easeOutCubic'],
+                                    scale: [1.2, 1, 'easeOutCubic'],
                                     shouldAlwaysCompleteAnimation: true,
-                                    opacity: [1, 0,'easeInCubic']
+                                    opacity: [1, 0.5, 'easeInCubic']
                                 }]}
                                 className="aspect-[2/1]"
-                            /></ParallaxLayer>
+                            />
+                        </ParallaxLayer>
                         <StaticEffectLayer />
                     </StaticOverlayWrapper>
-
                     <ExperienceSection />
-                    <ExperienceSection />
-
-                    <ExperienceSection />
+                    <Spacer $space="10rem" />
 
                 </InfoContainer>
             </ScrollAnimationWrapper>

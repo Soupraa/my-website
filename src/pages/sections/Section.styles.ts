@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SCREEN_SIZE } from "../../components/common/constants";
+import { SCREEN_SIZE }  from "../../components/common/constants";
 
 export const AboutContainer = styled.div`
     z-index: 1;
