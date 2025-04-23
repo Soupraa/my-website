@@ -25,7 +25,7 @@ const HomePage: React.FC = () => {
                         BASED IN AUSTRALIA.
                     </FlexStart>
                     <FlexEnd>
-                        FRONT-END ENGINEER
+                        FRONT-END ENGINEER.
                     </FlexEnd>
                 </FullWidthContainer>
             </HomePageContentArea>
