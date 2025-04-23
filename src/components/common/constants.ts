@@ -5,5 +5,6 @@ export const TYPOGRAPHY = {
 }
 
 export const SCREEN_SIZE = {
-    MEDIUM: "768px"
+    MEDIUM: "768px",
+    SMALL: "398px"
 }

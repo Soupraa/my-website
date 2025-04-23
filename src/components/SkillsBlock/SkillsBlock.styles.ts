@@ -22,7 +22,6 @@ export const LogoText = styled.div`
     text-transform: uppercase;
     font-size: 1.3rem;
     letter-spacing: 0.8px;
-    // color: #a7a5a5
     font-family: ${TYPOGRAPHY.SPACE_GROTESK}
 `
 export const LogosRow = styled.div<{ direction: 'left' | 'right' }>`

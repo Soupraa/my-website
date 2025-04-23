@@ -1,34 +1,50 @@
-import React, { useState } from "react";
+import React from "react";
 import { H1, TitleWidthContainer } from "../../components/common/styles";
-import ExperienceBlock from "../../components/ExperiencePanel/ExperiencePanel";
 import ExperiencePanel from "../../components/ExperiencePanel/ExperiencePanel";
 
-
-export type Experience = {
+export type Role = {
+    roleTitle?: string;
     time: string;
-    title: string;
     description: string;
     tags: string[];
+}
+export type Experience = {
+    title: string;
+    roles: Role[];
     link?: string;
+    isOpen: boolean;
 }
 const ExperienceData = [
     {
-        time: "2021 - PRESENT",
-        title: "Associate Engineer - NAB",
-        description: "Build and maintain full stack web applications for new innovative projects. Work closely with cross-functional teams, including designers, developers and product managers to ensure quality web design and user-centric accessible web apps.",
-        tags: ["JavaScript", "TypeScript", "React", "GraphQL", "Node.JS"],
-        link: "https://www.nab.com.au"
+        title: "NAB",
+        roles: [{
+            roleTitle: "Associate Engineer",
+            time: "2022 - PRESENT",
+            description: "Build and maintain full stack web applications for new innovative projects. Collaborate closely with cross-functional teams, including designers, developers and product managers to create high quality web solutions. Ensure applications are accessible, performant, and responsive across devices, while applying best practices in web development.",
+            tags: ["JavaScript", "TypeScript", "React", "GraphQL", "Node.JS"],
+        },
+        {
+            roleTitle: "Quality Engineer Intern",
+            time: "2021 - 2022",
+            description: "Developed, and contributed to the creation of an internal performance testing framework to support high-scale applications enabling batch testing and reliable benchmarking. Additionally, maintained existing testing platforms to support other teams in using these platforms.",
+            tags: ["AWS", "Python", "Flask", "JavaScript", "React"],
+        }],
+        link: "https://www.nab.com.au",
+        isOpen: true
     },
     {
-        time: "2019 - 2021",
-        title: "Web developer - FREELANCE",
-        description: "Worked on Shopify and Wordpress websites uplifting outdated designs to a more modern intuitive design.",
-        tags: ["JavaScript", "React", "Shopify", "WordPress"],
-        link: "https://www.nab.com.au"
+        title: "Freelance",
+        roles: [{
+            roleTitle: "Freelance",
+            time: "2019 - 2021",
+            description: "Built and maintained websites on Shopify and WordPress, creating custom components, themes, and plugins to deliver tailored user experiences.",
+            tags: ["JavaScript", "WordPress", "Shopify", "CSS"],
+        }],
+        link: "https://www.nab.com.au",
+        isOpen: false
     }
 ]
 const ExperienceSection: React.FC = () => {
-    const [isOpen, setIsOpen] = useState(false);
     return (
         <>
             <TitleWidthContainer>
@@ -38,7 +54,7 @@ const ExperienceSection: React.FC = () => {
             </TitleWidthContainer>
             {ExperienceData.map((d: Experience, i: number) => {
                 return (
-                  <ExperiencePanel data={d}/>
+                    <ExperiencePanel data={d} key={i}/>
                 )
             })}
         </>

@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
-import React, { useMemo, useRef } from 'react';
+import { useMemo, useRef } from 'react';
 import { Physics } from '@react-three/rapier';
 
 // Function to create a new star using instancing for performance

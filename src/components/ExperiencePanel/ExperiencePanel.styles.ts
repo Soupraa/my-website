@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import { SCREEN_SIZE, TYPOGRAPHY } from "../common/constants";
 
-
 export const ExperienceButton = styled.button<{ $isOpen: boolean }>`
-     width: 100%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100px;
     font-size: clamp(1.4rem, 10vw, 4vw);
     font-family: ${TYPOGRAPHY.SPACE_GROTESK};
     text-transform: uppercase;
@@ -24,7 +26,11 @@ export const ExperienceButton = styled.button<{ $isOpen: boolean }>`
     &:hover {
         background-size: 100% 0%; /* Collapse inward toward center */
         color: black;
+        & > div > div.arrow {  
+            background: black;
+        }
     }
+
 `;
 export const AccordionItemWrapper = styled.div<{ $isOpen: boolean }>`
     display: grid;
@@ -37,11 +43,44 @@ export const AccordionItemWrapper = styled.div<{ $isOpen: boolean }>`
 export const AccordionContent = styled.div`
     overflow: hidden;
     color: white;
-    font-size: 1.6rem;
     & > div {
         overflow: hidden;
-        padding: 2rem 1rem;
-        font-size: 1.2rem;
+        padding: 2rem;
         display: flex;
+        @media (max-width: ${SCREEN_SIZE.MEDIUM}){
+            flex-direction: column;
+            width: 100%;
+            box-sizing: border-box;
+        }
     }
+`;
+
+export const DateText = styled.div` 
+    width: 25%;
+    margin: auto;
+    font-size: 1.5rem;
+    @media (max-width: ${SCREEN_SIZE.MEDIUM}){
+        width: 100%;
+        padding-inline: 0rem;
+        padding-block: 1rem;
+        font-size: 1rem;
+    }
+`;
+export const Description = styled.div`
+    width: 90%;
+    padding-inline: 2rem;
+    @media (max-width: ${SCREEN_SIZE.MEDIUM}){
+        width: 100%;
+        padding-inline: 0rem;
+    }
+`;
+
+export const Arrow = styled.div<{ $isOpen: boolean }>`
+    width: 2.5rem;
+    height: 2rem;
+    background: white;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transition: transform 0.3s ease-in-out, background 1s ease;
+    transform: rotate(${({ $isOpen }) => ($isOpen ? '0deg' : '180deg')});
+
 `;
