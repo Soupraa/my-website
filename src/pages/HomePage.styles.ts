@@ -20,14 +20,13 @@ export const Title = styled.h1`
   display: inline-block;
   margin: 0;
   margin-left: -6px;
-  // background: linear-gradient(270deg,rgb(64, 58, 236),rgb(253, 92, 253),rgb(0, 207, 243), rgb(247, 51, 142) );
   background: linear-gradient(270deg,rgb(191, 135, 255),rgb(255, 182, 137),rgb(151, 239, 255), rgb(255, 137, 192) );
   background-size: 400% 400%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
 
-  animation: ${gradientFlow} 20s ease infinite;
+  animation: ${gradientFlow} 18s ease infinite;
 `;
 
 export const HeadingSection = styled.div` 

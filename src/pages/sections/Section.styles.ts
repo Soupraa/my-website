@@ -14,7 +14,6 @@ export const AboutContainer = styled.div`
 `;
 
 export const AboutBlock = styled.div`
-    min-height: 200px;
     width: 50%;
     padding-block: 2rem;
     @media (max-width: ${SCREEN_SIZE.MEDIUM}){

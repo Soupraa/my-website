@@ -25,7 +25,7 @@ const HomePage: React.FC = () => {
                         BASED IN AUSTRALIA.
                     </FlexStart>
                     <FlexEnd>
-                        /// FRONT-END ENGINEER
+                        FRONT-END ENGINEER.
                     </FlexEnd>
                 </FullWidthContainer>
             </HomePageContentArea>
@@ -33,7 +33,7 @@ const HomePage: React.FC = () => {
                 <InfoContainer>
                     <AboutSection />
                     <Spacer $space="3rem" />
-                    <StaticOverlayWrapper>
+                    {/* <StaticOverlayWrapper>
                         <ParallaxLayer>
                             <ParallaxBanner
                                 style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}
@@ -47,7 +47,7 @@ const HomePage: React.FC = () => {
                             />
                         </ParallaxLayer>
                         <StaticEffectLayer />
-                    </StaticOverlayWrapper>
+                    </StaticOverlayWrapper> */}
                     <ExperienceSection />
                     <Spacer $space="10rem" />
 

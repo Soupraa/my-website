@@ -36,8 +36,10 @@ const AboutSection: React.FC = () => {
                                     Currently a full-stack Software Engineer at <ParagraphLink href="https://www.nab.com.au" target="_blank">National Australia Bank</ParagraphLink>, specialising in front-end web development. I contribute to the creation and maintenance of pilot projects ensuring
                                     our platforms meet best practices to deliever a user-centric experience.
                                 </Paragraph>
-                                <Spacer $space="3rem" />
+                                <Spacer $space="2rem" />
                                 <H2>skills</H2>
+                                <Spacer $space="1.5rem" />
+
                                 <SkillsBlock />
                                 <Spacer $space="4rem" />
 

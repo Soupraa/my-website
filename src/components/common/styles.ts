@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { TYPOGRAPHY } from "./constants";
+import { SCREEN_SIZE, TYPOGRAPHY } from "./constants";
 
 export const Container = styled.div`
     width: 100%;
@@ -15,8 +15,11 @@ export const ContentArea = styled.div`
     color: white;
 `;
 export const ButtonsContainer = styled.div`
-   gap: 3rem;
-   display: flex;
+    gap: 3rem;
+    display: flex;
+    @media (max-width: ${SCREEN_SIZE.SMALL}) {
+        flex-direction: column;
+    }
 `;
 export const CommonButton = styled.button`  
     text-decoration: none;
@@ -28,6 +31,9 @@ export const CommonButton = styled.button`
     padding: 0.8rem 1rem;
     cursor: pointer;
     width: fit-content;
+    color: #010105;
+    -webkit-text-fill-color: #010105; /* disables Safari default blue */
+    -webkit-tap-highlight-color: #010105; /* removes gray tap highlight */
     background: linear-gradient(to right, #0099ff 50%, white 50%);
     background-size: 200% 100%;
     background-position: 100% 0;
@@ -43,12 +49,14 @@ export const CommonButton = styled.button`
     &:hover {
         background-position: 0 0;
     }
+    @media (max-width: ${SCREEN_SIZE.SMALL}) {
+        width: 100%;
+    }
 
 `;
 export const Paragraph = styled.p`
     color: #a7a5a5;
     line-height: 1.8rem;
-    // text-transform: uppercase;
 `;
 
 export const H1 = styled.h1`
@@ -60,15 +68,23 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
   font-family: ${TYPOGRAPHY.SPACE_GROTESK};
   text-transform: uppercase;
+  margin: 0;
 `;
 export const TechTag = styled.div`
     display:inline-block;
     background: #3530c9;
-    border-radius: 1rem;
-    padding: 0.5rem;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
+    padding: 0.8rem;
+    margin-right: 0.8rem;
+    margin-bottom: 0.6rem;
     font-size: 0.8rem;
+      clip-path: polygon(
+    0 0,
+    calc(100% - 10px) 0,
+    100% 10px,
+    100% 100%,
+    10px 100%,
+    0 calc(100% - 10px)
+    );
 `;
 export const FlexStart = styled.div`
     justify-content: flex-start;
@@ -97,7 +113,10 @@ export const FullWidthContainer = styled.div`
     align-items: center;
     box-sizing: border-box;
     color: white;
-    font-family: ${TYPOGRAPHY.NOVA_SQUARE}
+    font-family: ${TYPOGRAPHY.NOVA_SQUARE};
+    @media (max-width: ${SCREEN_SIZE.SMALL}) {
+        padding: 1rem 1rem;
+    }
 `;
 
 export const TitleWidthContainer = styled.div`
