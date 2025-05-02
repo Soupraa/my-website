@@ -37,3 +37,17 @@ export const InnerBlock = styled.div`
         width: 100%;
     }
 `;
+
+export const ProjectsSectionContainer = styled.div`
+    height: 100vh;
+    width: 100%;
+    background: #0099ff;
+    z-index: 1;
+    position: relative;
+`;
+export const StyledA = styled.a`    
+    text-decoration: none;
+`;
+export const ProjectContentContainer = styled.div`
+    padding: 2rem;
+`;

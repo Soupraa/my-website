@@ -3,7 +3,6 @@ import { SCREEN_SIZE, TYPOGRAPHY } from "./constants";
 
 export const Container = styled.div`
     width: 100%;
-    height:100vh;
 `;
 export const Spacer = styled.div<{ $space?: string }>`
   margin-bottom: ${({ $space }) => $space || "0rem"};
@@ -59,16 +58,16 @@ export const Paragraph = styled.p`
     line-height: 1.8rem;
 `;
 
-export const H1 = styled.h1`
+export const H2 = styled.h2`
     font-family: ${TYPOGRAPHY.TITLE};
     color: white;
     text-transform: uppercase;
-    
 `;
-export const H2 = styled.h2`
-  font-family: ${TYPOGRAPHY.SPACE_GROTESK};
-  text-transform: uppercase;
-  margin: 0;
+export const H3 = styled.h3`
+    font-family: ${TYPOGRAPHY.SPACE_GROTESK};
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 1.5rem;
 `;
 export const TechTag = styled.div`
     display:inline-block;
@@ -129,7 +128,7 @@ export const BigH2 = styled.h2`
     font-family: ${TYPOGRAPHY.TITLE};
     font-weight: 800;
     font-style: normal;
-    font-size: clamp(3rem, 10vw, 7vw);
+    font-size: clamp(1rem, 5vw + 2rem, 10rem);
     margin: auto;
 `;
 
@@ -186,5 +185,12 @@ export const ParallaxLayer = styled.div`
   width: 100%;
   padding-top: 50%;
   overflow: hidden;
+`;
+
+export const ContainerLarge = styled.div`
+    width: 100%;
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
 `;
 

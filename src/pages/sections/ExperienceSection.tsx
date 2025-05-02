@@ -1,5 +1,5 @@
 import React from "react";
-import { H1, TitleWidthContainer } from "../../components/common/styles";
+import { ContainerLarge, H2, TitleWidthContainer } from "../../components/common/styles";
 import ExperiencePanel from "../../components/ExperiencePanel/ExperiencePanel";
 
 export type Role = {
@@ -48,15 +48,22 @@ const ExperienceSection: React.FC = () => {
     return (
         <>
             <TitleWidthContainer>
-                <H1>
+                <H2>
                     EXPERIENCE
-                </H1>
+                </H2>
             </TitleWidthContainer>
-            {ExperienceData.map((d: Experience, i: number) => {
-                return (
-                    <ExperiencePanel data={d} key={i}/>
-                )
-            })}
+            <ContainerLarge>
+                {ExperienceData.map((d: Experience, i: number) => {
+                    return (
+                        <ExperiencePanel data={d} key={i} />
+                    )
+                })}
+            </ContainerLarge>
+            <TitleWidthContainer>
+                <H2>
+                    ...
+                </H2>
+            </TitleWidthContainer>
         </>
     )
 }

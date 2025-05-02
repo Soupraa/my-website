@@ -40,6 +40,8 @@ export const HeadingSection = styled.div`
 export const InfoContainer = styled.div`
   background: #010105;
   width: 100%;
+  z-index: 2;
+  position:relative;
 `;
 
 export const HomePageContentArea = styled.div`  

@@ -1,7 +1,8 @@
 import React, { ReactNode, useEffect, useState } from "react";
-import { BlackOverlay, Container } from "./PageTemplate.styles";
+import { BlackOverlay, Container, MainContent } from "./PageTemplate.styles";
 import { Canvas } from "@react-three/fiber";
 import HomeScene from "../Scenes/HomeScene";
+
 const PageTemplate: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [isVisible, setIsVisible] = useState(true);
 
@@ -15,17 +16,19 @@ const PageTemplate: React.FC<{ children: ReactNode }> = ({ children }) => {
     }, []);
     return (
         <>
-            <Canvas
-                gl={{ preserveDrawingBuffer: true }}
-                style={{ position: "fixed", width: "100%", height: "100%", backgroundColor: "#000" }}
-                camera={{ position: [0, 0, 25] }}
-            >
-                <HomeScene />
-            </Canvas>
-            <Container>
-                {isVisible && <BlackOverlay />}
-                {children}
-            </Container>
+            <MainContent>
+                <Canvas
+                    gl={{ preserveDrawingBuffer: true }}
+                    style={{ position: "fixed", width: "100%", height: "100%", backgroundColor: "#000" }}
+                    camera={{ position: [0, 0, 25] }}
+                >
+                    <HomeScene />
+                </Canvas>
+                <Container>
+                    {isVisible && <BlackOverlay />}
+                    {children}
+                </Container>
+            </MainContent>
         </>
     )
 }

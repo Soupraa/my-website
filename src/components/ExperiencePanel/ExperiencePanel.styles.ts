@@ -54,7 +54,9 @@ export const AccordionContent = styled.div`
         }
     }
 `;
-
+export const TitleContainer = styled.h2`
+    font-size: 55px;
+`;
 export const DateText = styled.div` 
     width: 25%;
     margin: auto;
